@@ -117,6 +117,5 @@ public class EmployeePayrollService {
          * calling write method from object name as employeePayrollService
          */
         employeePayrollService.write();
-
     }
 }
