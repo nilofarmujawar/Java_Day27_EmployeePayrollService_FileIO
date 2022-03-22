@@ -4,6 +4,13 @@ package com.day27;
  *         - Create Employee Payroll Class of id, name and Salary
  *         - Read the information from the console
  *         - Finally write the employee payroll to the console
+ *  UC2 :- Write a program to demonstrate File Operations like
+ *         - Check File Exists
+ *         - Delete File and Check File Not Exist
+ *         - Create Directory
+ *         - Create Empty File
+ *         - List Files, Directories as well as Files with Extension
+ *
  */
 
 /**
