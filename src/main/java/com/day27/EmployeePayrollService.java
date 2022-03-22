@@ -17,6 +17,9 @@ package com.day27;
  *         - Populate Test Employee Payroll Object
  *         - Write Employee Payroll to File Use File IO
  *         - Count Number of Entries to ensure the Operation worked
+ *  UC5 :- Ability for Employee Payroll Service to printPayroll Service to print the Employee Payrolls
+ *         - Using File IO print the lines in the Payroll File
+ *         - Count Number of Entries to ensure the Operation  worked
  *
  */
 
@@ -66,11 +69,14 @@ public class EmployeePayrollService {
      * create a method name as write
      * Method to print data back to console
      */
-    private void write() {
+    void write(IOService ioService) {
+        if(ioService.equals(ioService.CONSOLE_IO))
         /**
          * display the employee data in store in employeePayrollList
          */
         System.out.println("Given Employee Data is : " + employeePayrollList);
+        else if(ioService.equals(ioService.FILE_IO))
+            new EmployeePayrollFileIOService().writeData(employeePayrollList);
     }
 
     /**
@@ -129,7 +135,7 @@ public class EmployeePayrollService {
         /**
          * calling write method from object name as employeePayrollService
          */
-        employeePayrollService.write();
+        employeePayrollService.write(IOService.CONSOLE_IO);
     }
 
     /**
@@ -141,4 +147,13 @@ public class EmployeePayrollService {
 
         return new EmployeePayrollFileIOService().countEntries(employeePayrollList);
     }
+
+    /**
+     * create a method name as printData
+     * @param fileIo print data in file io
+     */
+    public void printData(IOService fileIo) {
+        new EmployeePayrollFileIOService().printData((employeePayrollList));
+    }
 }
+
